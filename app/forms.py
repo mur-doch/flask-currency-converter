@@ -10,4 +10,3 @@ class ConvertForm(FlaskForm):
     currency_two = SelectField('Second Currency', choices=get_currencies())
     amount_one = FloatField('First Amount', widget=NumberInput())
     amount_two = FloatField('Second Amount', widget=NumberInput())
-    submit = SubmitField('Convert')

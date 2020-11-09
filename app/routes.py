@@ -7,13 +7,6 @@ from app.helpers import convert_currency
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     form = ConvertForm()
-    if form.validate_on_submit():
-        flash('Request for conversion: {} in {} to {} in {}'.format(form.amount_one.data, form.currency_one.data, form.amount_two.data, form.currency_two.data))
-
-        out_val = convert_currency(form.currency_one.data, form.amount_one.data, form.currency_two.data)
-        flash('Results: {} in {} gives {} in {}'.format(form.amount_one.data, form.currency_one.data, out_val, form.currency_two.data))
-        
-        return redirect(url_for('index'))
     return render_template('index.html', form=form)
 
 @app.route('/ajax', methods=['POST'])
