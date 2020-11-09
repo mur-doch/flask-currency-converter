@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Currency Converter</title>
+		<script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
+
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>
