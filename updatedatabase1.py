@@ -5,7 +5,6 @@ from app import db
 from app.models import Currency 
 from config import Config
 
-#client = Client('j2ymZSFXgBnpqO3Z', 'krkoj8M67Z2tooA44JDACLIlKK44v3En')
 client = Client(Config.COINBASE_KEY1, Config.COINBASE_KEY2)
 prices = client.get_exchange_rates(currency = 'USD')
 
